@@ -1,0 +1,31 @@
+{
+  "name": "42-cent-nmi",
+  "version": "0.1.0",
+  "description": "42-cent adaptor for nmi payment gateway",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV='test' node ./node_modules/.bin/mocha ./test/ -R spec -t 35000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/continuous-software/42-cent-nmi.git"
+  },
+  "keywords": [
+    "nmi",
+    "payment",
+    "gateway",
+    "42-cent"
+  ],
+  "author": "Laurent Renard",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.0.1"
+  },
+  "dependencies": {
+    "42-cent-base": "^0.3.0",
+    "bluebird": "^2.3.6",
+    "query-string": "^1.0.0",
+    "request": "^2.47.0",
+    "require": "^2.4.17"
+  }
+}

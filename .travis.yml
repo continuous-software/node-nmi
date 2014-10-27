@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '0.10'
+before_script:
+- npm install
+script:
+- npm test
+notifications:
+  hipchat:
+    rooms:
+      secure: CXlLv+G1XdrSc2+v7cV/Keb6JRvS7enLQfgZweweuvEBeCYLDrlB8Ca+piQJpVGEcg4qhsDPRRjXEsaO6pvNm1q/6PzT5nYnYaLBp5jNKuIV4n8OPq2NMIIyYHxL3f86zKKikOL2mOZQscVYq6gjLXT6pSWPNjsM/n3lfGPtUDc=
