@@ -141,5 +141,43 @@ describe('NMI adpator', function () {
 
     });
 
+    describe('void transaction', function () {
+        it('should void a transaction', function (done) {
+            var order = {
+                amount: Math.random() * 100 + 1
+            };
+
+            var cc = {
+                creditCardNumber: '4111111111111111',
+                expirationYear: '17',
+                expirationMonth: '01',
+                cvv: '123'
+            };
+
+            var transId;
+            service.submitTransaction(order, cc)
+                .then(function (result) {
+                    transId = result.transactionId;
+                    return service.voidTransaction(transId);
+                })
+                .then(function (response) {
+                    assert(response._original, '_original should be defined');
+                    done();
+                });
+        });
+
+        it('should reject the promise when the gateway returns error', function (done) {
+            service.voidTransaction(666)
+                .then(function (res) {
+                    throw new Error('should not get here');
+                }, function (err) {
+                    assert(err instanceof GatewayError);
+                    assert(err.message.indexOf('Transaction not found') !== -1);
+                    assert(err._original, '_original should be defined');
+                    done();
+                })
+        });
+    });
+
 
 });
