@@ -1,6 +1,6 @@
 {
   "name": "42-cent-nmi",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "42-cent adaptor for nmi payment gateway",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "mocha": "^2.0.1"
   },
   "dependencies": {
-    "42-cent-base": "^0.4.0",
+    "42-cent-base": "^0.5.0",
     "bluebird": "^2.3.6",
     "query-string": "^1.0.0",
     "request": "^2.47.0",
