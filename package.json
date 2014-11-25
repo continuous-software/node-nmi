@@ -1,6 +1,6 @@
 {
   "name": "42-cent-nmi",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "42-cent adaptor for nmi payment gateway",
   "main": "index.js",
   "scripts": {
