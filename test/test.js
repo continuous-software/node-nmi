@@ -2,6 +2,8 @@ var config = require('../config.js');
 var factory = require('../index.js');
 var assert = require('assert');
 var GatewayError = require('42-cent-base').GatewayError;
+var CreditCard = require('42-cent-model').CreditCard;
+var Prsopect = require('42-cent-model').Prospect;
 
 describe('NMI adpator', function () {
 
@@ -251,4 +253,54 @@ describe('NMI adpator', function () {
     });
   });
 
+  describe('create customer', function () {
+
+    it('should create a customer profile', function (done) {
+
+      var cc = new CreditCard()
+        .withCreditCardNumber('4111111111111111')
+        .withExpirationMonth('12')
+        .withExpirationYear('2014')
+        .withCvv('123');
+
+      var billing = {
+        customerFirstName: 'bob',
+        customerLastName: 'leponge',
+        email: 'bob@eponge.com'
+      };
+
+      service.createCustomerProfile(cc, billing)
+        .then(function (result) {
+          assert(result.profileId, ' profileId Should be defined');
+          assert(result._original, '_original should be defined');
+          done();
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    });
+
+    it('should reject the promise when the gateway return an error', function (done) {
+      var cc = new CreditCard()
+        .withCreditCardNumber('411111111111')
+        .withExpirationMonth('12')
+        .withExpirationYear('2009')
+        .withCvv('123');
+
+      var billing = {
+        customerFirstName: 'bob',
+        customerLastName: 'leponge',
+        email: 'bob@eponge.com'
+      };
+
+      service.createCustomerProfile(cc, billing)
+        .then(function (result) {
+          throw new Error('it should not get here');
+        }, function (err) {
+          assert(err._original, '_original should be defined');
+          assert(err.message.indexOf('Invalid Credit Card Number') != -1);
+          done();
+        });
+    });
+  });
 });
