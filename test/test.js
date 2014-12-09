@@ -303,4 +303,55 @@ describe('NMI adpator', function () {
         });
     });
   });
+
+  describe('charge customer profile', function () {
+
+
+    it('should charge a existing customer', function (done) {
+
+      var random = Math.floor(Math.random() * 1000);
+
+
+      var cc = new CreditCard()
+        .withCreditCardNumber('4111111111111111')
+        .withExpirationMonth('12')
+        .withExpirationYear('2014')
+        .withCvv('123');
+
+      var billing = {
+        customerFirstName: 'bob',
+        customerLastName: 'leponge',
+        email: random + 'bob@eponge.com'
+      };
+
+      service.createCustomerProfile(cc, billing)
+        .then(function (result) {
+          var randomAmount = Math.floor(Math.random() * 300);
+          assert(result.profileId, ' profileId Should be defined');
+          assert(result._original, '_original should be defined');
+
+          return service.chargeCustomer({amount: randomAmount}, {profileId: result.profileId});
+        })
+        .then(function (res) {
+          assert(res.transactionId, 'transactionId should be defined');
+          assert(res._original, '_original should be defined');
+          done();
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    });
+
+    it('should reject the promise when the gateway return an error', function (done) {
+      return service.chargeCustomer({amount: 234}, {profileId: '1234'})
+        .then(function () {
+          throw new Error('should not get here');
+        }, function (err) {
+          assert(err._original, '_original should be defined');
+          assert(err.message.indexOf('Invalid Customer Vault ID specified') !== -1, 'should have the gateway response in the message');
+          done();
+        }
+      );
+    });
+  });
 });
