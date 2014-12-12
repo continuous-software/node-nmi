@@ -1,6 +1,7 @@
-[![Build Status](https://travis-ci.org/continuous-software/42-cent-nmi.svg?branch=master)](https://travis-ci.org/continuous-software/42-cent-nmi)
+[![Build Status](https://travis-ci.org/continuous-software/node-nmi.svg?branch=master)](https://travis-ci.org/continuous-software/node-nmi)
 
-42-cent-nmi
-===========
+![node-nmi](http://www.pctechph.com/wp-content/uploads/2012/02/Network_Merchants.gif)
 
-42-cent adaptor for [NMI payment gateway](https://www.nmi.com/)
+## Installation ##
+
+    npm install -s nmi
