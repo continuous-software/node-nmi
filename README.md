@@ -4,7 +4,7 @@
 
 ## Installation ##
 
-    npm install -s nmi
+    $ npm install -s nmi
     
 ## Usage
 
