@@ -6,6 +6,5 @@ before_script:
 script:
 - npm test
 notifications:
-  hipchat:
-    rooms:
-      secure: Lka6JkWIm6vtG/guLwHk+VrCEnnSP0j+ip8r9QSWxRsfoszD6GQs/I2Uq8mPyRIOq5cgl+etnOmej4YPTPnpdq9wqsPW+9GW1scu4KZ3nAFuS7gTVwyYygBTbunIK3wRpCVJ3uaOMt5t/baBFi2XqzWVcYeocoef27lBpdzUMaw=
+  slack:
+    secure: T1DBE66nVZ1si++MHLjkdn7YMo+Komjq8AKSA/udQBqNvOK1C7AZ3YuwFJoA3phkwX0hzAZ4sRlGMJj2AB9QUw109/3vqfPd9fafhIY4ynNVXNRW0uiXCkoT+L0KcLwt/GBj5zfep53mwi7uPgnUvsAXRjXmofgUi/p3MJYjjVE=
