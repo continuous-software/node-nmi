@@ -5,8 +5,18 @@
 ## Installation ##
 
     $ npm install -s nmi
-    
+
 ## Usage
+
+```javascript
+var NMI = require('nmi');
+var client = new NMI({
+    USERNAME: '<PLACEHOLDER>',
+    PASSWORD: '<PLACEHOLDER>'
+});
+```
+
+## Gateway API
 
 This SDK is natively compatible with [42-cent](https://github.com/continuous-software/42-cent).  
 It implements the [BaseGateway](https://github.com/continuous-software/42-cent-base) API.
