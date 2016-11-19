@@ -383,9 +383,9 @@ describe('NMI adpator', function () {
     });
 
     it('should reject the promise when the gateway return an error', function (done) {
-      return service.chargeCustomer({amount: 234}, {profileId: '1234'})
+      return service.chargeCustomer({amount: 234}, {profileId: 'invalid'})
         .then(function () {
-          throw new Error('should not get here');
+          done('should not get here');
         }, function (err) {
           assert(err._original, '_original should be defined');
           assert(err.message.indexOf('Invalid Customer Vault ID specified') !== -1, 'should have the gateway response in the message');
