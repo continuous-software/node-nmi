@@ -22,16 +22,16 @@ describe('NMI adpator', function () {
 
       var cc = {
         creditCardNumber: '4111111111111111',
-        expirationYear: '17',
+        expirationYear: '20',
         expirationMonth: '01',
-        cvv: '123'
+        cvv: '999'
       };
       var prospect = {
         customerFirstName: 'Ellen',
-        customerLastName: 'Johson',
-        billingAddress: '14 Main Street',
+        customerLastName: 'Johnson',
+        billingAddress: 'Address 1',
         billingCity: 'Pecan Springs',
-        billingZip: '44628',
+        billingZip: '12345',
         billingState: 'TX',
         shippingFirstName: 'China',
         shippingLastName: 'Bayles',
@@ -56,7 +56,7 @@ describe('NMI adpator', function () {
 
       var cc = {
         creditCardNumber: '666',
-        expirationYear: '17',
+        expirationYear: '20',
         expirationMonth: '01',
         cvv: '123'
       };
@@ -95,7 +95,7 @@ describe('NMI adpator', function () {
 
       var cc = {
         creditCardNumber: '4111111111111111',
-        expirationYear: '17',
+        expirationYear: '20',
         expirationMonth: '01',
         cvv: '123'
       };
@@ -129,7 +129,7 @@ describe('NMI adpator', function () {
 
       var cc = {
         creditCardNumber: '666',
-        expirationYear: '17',
+        expirationYear: '20',
         expirationMonth: '01',
         cvv: '123'
       };
@@ -168,7 +168,7 @@ describe('NMI adpator', function () {
 
       var cc = {
         creditCardNumber: '4111111111111111',
-        expirationYear: '17',
+        expirationYear: '20',
         expirationMonth: '01',
         cvv: '123'
       };
@@ -208,7 +208,7 @@ describe('NMI adpator', function () {
 
       var cc = {
         creditCardNumber: '4111111111111111',
-        expirationYear: '17',
+        expirationYear: '20',
         expirationMonth: '01',
         cvv: '123'
       };
@@ -263,7 +263,7 @@ describe('NMI adpator', function () {
 
       var cc = {
         creditCardNumber: '4111111111111111',
-        expirationYear: '17',
+        expirationYear: '20',
         expirationMonth: '01',
         cvv: '123'
       };
