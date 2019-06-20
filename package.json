@@ -22,7 +22,7 @@
     "42-cent-base": "^1.0.0",
     "42-cent-util": "^1.0.0",
     "bluebird": "^3.5.1",
-    "query-string": "^6.0.0",
+    "query-string": "^6.8.0",
     "request": "^2.47.0",
     "require": "^2.4.17"
   },
